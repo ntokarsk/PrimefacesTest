@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://primefaces.org/ui" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  
+  <display-name>test</display-name>
+  <welcome-file-list>
+    <welcome-file>basic.xhtml</welcome-file>
+  </welcome-file-list>
+    
+  <!-- JSF Mapping -->
+  <servlet>
+  	<servlet-name>Faces Servlet</servlet-name>
+  	<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Faces Servlet</servlet-name>
+  	<url-pattern>*.xhtml</url-pattern>
+  </servlet-mapping>
+  
+  <mime-mapping>
+<extension>png</extension>
+<mime-type>images/png</mime-type>
+</mime-mapping>
+  
+  <!-- Change to "Production" when you are ready to deploy -->
+  <context-param>
+  	<param-name>javax.faces.PROJECT_STAGE</param-name>
+  	<param-value>Development</param-value>
+  </context-param>
+ 
+ <!-- PrimeFaces Themes -->
+
+  
+  
+</web-app>
