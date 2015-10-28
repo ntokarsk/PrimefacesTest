@@ -1,0 +1,35 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:composite="http://java.sun.com/jsf/composite"
+	>
+
+<composite:interface>
+
+	<composite:attribute name="FormID"/>
+	<composite:attribute name="tableID"/>
+
+</composite:interface>
+
+<composite:implementation>
+
+	<p:contextMenu for="#{cc.attrs.FormID}"> 
+		<p:submenu label="Export">
+			<p:menuitem value="Export to XLS" onclick="$('#exportToXLS').click()" />
+		</p:submenu>
+
+		<p:menuitem value="Columns"	onclick="$('#toggler').click()" />
+	</p:contextMenu>
+
+<p:commandLink id="toggler" type="button" />
+		<p:columnToggler datasource="#{cc.attrs.tableID}" trigger="toggler" />
+
+ 	<p:commandLink id="exportToXLS" ajax="false" width="24">
+		<p:dataExporter type="xls" target="#{cc.attrs.tableID}"
+			fileName="xlsfile" />
+	</p:commandLink>
+
+</composite:implementation>
+
+</html>

@@ -13,7 +13,12 @@ import Test.CarService;
 @ViewScoped
 public class BasicView implements Serializable {
      
-    private List<Car> cars;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -7434138184769520159L;
+
+	private List<Car> cars;
      
     @ManagedProperty("#{carService}")
     private CarService service;

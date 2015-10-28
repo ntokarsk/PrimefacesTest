@@ -3,7 +3,9 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui"
-	template="/templates/ui.xhtml">
+	template="/templates/ui.xhtml"
+	xmlns:components="http://java.sun.com/jsf/composite/components">
+	
 
 	<ui:define name="content">
 		<div class="entry">
@@ -11,14 +13,14 @@
 			<p:panel id="panelTest" styleClass="preferencesPanel">
 				<p:layout style="width:60%;height:500px;">
 					<p:layoutUnit position="center">
-			            <h:form>
-			                <p:dataTable 
+			            <h:form id = "tableForm" prependId="false">
+			                <p:dataTable
+			                	id = "dataTable" 
 				                var="car" 
 				                value="#{dtBasicView.cars}"
 				                draggableColumns="true" 
 								lazy="true"
 								resizableColumns="true"
-								style="overflow: auto; height: 100%; width: 100%"
 							>
 			                    <p:column headerText="brand" width="80">
 			                        <h:outputText value="#{car.brand}" />
@@ -73,6 +75,12 @@
 			                    </p:column>
 			                    
 			                </p:dataTable>
+			                
+			               <components:contextmenu 
+								FormID="tableForm"
+								tableID="dataTable" 
+							/> -->
+			                
 			            </h:form>
 			    	</p:layoutUnit>
 	            </p:layout>
